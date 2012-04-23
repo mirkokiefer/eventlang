@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ACC034421544A87A00C549B9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = ACC034411544A87A00C549B9 /* main.c */; };
-		ACC034441544A87A00C549B9 /* FunC.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACC034431544A87A00C549B9 /* FunC.1 */; };
+		ACC0345A1544AB2500C549B9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = ACC034551544AB2500C549B9 /* main.c */; };
+		ACC0345B1544AB2500C549B9 /* fc_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = ACC034571544AB2500C549B9 /* fc_tests.c */; };
+		ACC0345E1544ABC200C549B9 /* fc_core.c in Sources */ = {isa = PBXBuildFile; fileRef = ACC0345D1544ABC200C549B9 /* fc_core.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +19,6 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				ACC034441544A87A00C549B9 /* FunC.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -26,8 +26,14 @@
 
 /* Begin PBXFileReference section */
 		ACC0343D1544A87A00C549B9 /* FunC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FunC; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACC034411544A87A00C549B9 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		ACC034431544A87A00C549B9 /* FunC.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = FunC.1; sourceTree = "<group>"; };
+		ACC034531544AB2500C549B9 /* deps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deps.h; sourceTree = "<group>"; };
+		ACC034541544AB2500C549B9 /* fun_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fun_c.h; sourceTree = "<group>"; };
+		ACC034551544AB2500C549B9 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = ../main.c; sourceTree = "<group>"; };
+		ACC034571544AB2500C549B9 /* fc_tests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fc_tests.c; sourceTree = "<group>"; };
+		ACC034581544AB2500C549B9 /* fc_tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fc_tests.h; sourceTree = "<group>"; };
+		ACC034591544AB2500C549B9 /* minuit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minuit.h; sourceTree = "<group>"; };
+		ACC0345C1544ABBD00C549B9 /* fc_core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fc_core.h; sourceTree = "<group>"; };
+		ACC0345D1544ABC200C549B9 /* fc_core.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fc_core.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +50,11 @@
 		ACC034321544A87A00C549B9 = {
 			isa = PBXGroup;
 			children = (
-				ACC034401544A87A00C549B9 /* FunC */,
+				ACC034531544AB2500C549B9 /* deps.h */,
+				ACC0345C1544ABBD00C549B9 /* fc_core.h */,
+				ACC0345D1544ABC200C549B9 /* fc_core.c */,
+				ACC034541544AB2500C549B9 /* fun_c.h */,
+				ACC034561544AB2500C549B9 /* tests */,
 				ACC0343E1544A87A00C549B9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,13 +67,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ACC034401544A87A00C549B9 /* FunC */ = {
+		ACC034561544AB2500C549B9 /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				ACC034411544A87A00C549B9 /* main.c */,
-				ACC034431544A87A00C549B9 /* FunC.1 */,
+				ACC034551544AB2500C549B9 /* main.c */,
+				ACC034571544AB2500C549B9 /* fc_tests.c */,
+				ACC034581544AB2500C549B9 /* fc_tests.h */,
+				ACC034591544AB2500C549B9 /* minuit.h */,
 			);
-			path = FunC;
+			path = tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,7 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC034421544A87A00C549B9 /* main.c in Sources */,
+				ACC0345A1544AB2500C549B9 /* main.c in Sources */,
+				ACC0345B1544AB2500C549B9 /* fc_tests.c in Sources */,
+				ACC0345E1544ABC200C549B9 /* fc_core.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
