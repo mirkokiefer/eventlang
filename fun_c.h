@@ -43,6 +43,7 @@ typedef struct {
 typedef union _fc_tree_or_param fc_tree_or_param;
 typedef struct _fc_funct_tree fc_funct_tree;
 typedef struct _fc_funct_params fc_funct_params;
-typedef void(*fc_function_primitive)(fc_value *parameters[], fc_value *buffer);
+typedef struct _fc_context fc_context;
+typedef void(*fc_function_primitive)(fc_value *parameters[], fc_context *context, fc_value *buffer);
 
 #endif
