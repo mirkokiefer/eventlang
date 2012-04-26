@@ -4,7 +4,7 @@
 
 #include "fun_c.h"
 
-FCDict FCDictUpdate(FCDict dict, fc_value keyValues[]);
-fc_value FCDictValue(FCDict dict, fc_value key);
+FCDict FCDictUpdate(FCDict dict, fc_value *keyValues[]);
+fc_value FCDictValue(FCDict dict, fc_value *key);
 
 #endif

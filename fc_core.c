@@ -2,60 +2,42 @@
 
 #include "fc_core.h"
 
-fc_value FCValueNewNumber(double number) {
-  fc_value value = {
-    .value = {.number = number},
-    .type = fc_type_number
-  };
-  return value;
+void fc_value_new_number(double number, fc_value *buffer) {
+  buffer->type = fc_type_number;
+  buffer->value.number = number;
 }
 
-fc_value FCValueNewDict(FCDict dict) {
-  fc_value value = {
-    .value = {.dict = dict},
-    .type = fc_type_dict
-  };
-  return value;
+void fc_value_new_dict(FCDict dict, fc_value *buffer) {
+  buffer->type = fc_type_dict;
+  buffer->value.dict = dict;
 }
 
-fc_value FCValueNewList(FCList list) {
-  fc_value value = {
-    .value = {.list = list},
-    .type = fc_type_list
-  };
-  return value;
+void fc_value_new_list(FCList list, fc_value *buffer) {
+  buffer->type = fc_type_list;
+  buffer->value.list = list;
 }
 
-fc_type FCValueType(fc_value value) {
-  return value.type;
+void fc_value_new_function(FCFunction function, fc_value *buffer) {
+  buffer->type = fc_type_function;
+  buffer->value.function = function;
 }
 
-double FCValueNumber(fc_value value) {
-  return value.value.number;
+fc_type fc_value_type(fc_value *value) {
+  return value->type;
 }
 
-FCList FCValueList(fc_value value) {
-  return value.value.list;
+double fc_value_number(fc_value *value) {
+  return value->value.number;
 }
 
-FCDict FCValueDict(fc_value value) {
-  return value.value.dict;
+FCList fc_value_list(fc_value *value) {
+  return value->value.list;
 }
 
-union _fc_tree_or_param {
-  fc_funct_tree *function;
-  int parameter;
-};
+FCDict fc_value_dict(fc_value *value) {
+  return value->value.dict;
+}
 
-struct _fc_funct_tree {
-  FCFunction function;
-  fc_tree_or_param *parameters;
-};
-
-struct _fc_funct_params {
-  FCFunction parent;
-  int *args;
-  int *local_vars;
-  fc_tree_or_param *local_trees;
-};
-
+FCFunction fc_value_function(fc_value *value) {
+  return value->value.function;
+}
