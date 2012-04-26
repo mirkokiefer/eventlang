@@ -4,35 +4,24 @@
 
 #include "fun_c.h"
 
-typedef struct fc_object* fc_object_s;
-typedef struct fc_type* fc_type_s;
-typedef struct fc_context* fc_context_s;
+fc_value FCValueNewNumber(double number);
+fc_value FCValueNewDict(FCDict dict);
+fc_value FCValueNewList(FCList list);
+fc_value FCValueNewFunction(FCFunction function);
+fc_type FCValueType(fc_value value);
+double FCValueNumber(fc_value value);
+FCList FCValueList(fc_value value);
+FCDict FCValueDict(fc_value value);
+FCFunction FCValueFunction(fc_value value);
 
-// object functions
-typedef void(*child_cb_f)(void *cookie, char *key, fc_object_s objects[], size_t length);
+typedef union _fc_tree_or_param fc_tree_or_param;
+typedef struct _fc_funct_tree fc_funct_tree;
+typedef struct _fc_funct_params fc_funct_params;
 
-// see objects as tables like in Lua - have a meta-table defining polymorphic functions
-fc_object_s object_create(void *data, fc_type_s type);
-fc_object_s object_create_from_hash(char hash[HASH_LENGTH], fc_context_s context);
-void* object_data(fc_object_s object, fc_type_s type);
-void object_walk_children(fc_object_s object, child_cb_f cb);
-void object_store(fc_object_s object, fc_context_s context);
-void object_proxify(fc_object_s object, fc_context_s context);
-
-// type functions
-typedef void(*dealloc_f)(fc_object_s object);
-typedef void(*walk_children_f)(fc_object_s object, void *cookie, child_cb_f cb);
-typedef void(*store_children_f)(fc_object_s object, char *key, fc_object_s objects[], size_t length);
-typedef void(*compare_f)(fc_object_s object1, fc_object_s object2, fc_type_s object2_type);
-
-struct fc_type_init {
-  char *name;
-  dealloc_f dealloc_fun;
-  walk_children_f walk_children_fun;
-  store_children_f store_children_fun;
-  compare_f compare_fun;
-};
-
-fc_type_s type_create(struct fc_type_init *parameters);
+fc_tree_or_param fc_tree_or_param_new(fc_funct_tree tree, int parameter);
+fc_funct_tree fc_funct_tree_new(FCFunction function, fc_tree_or_param *parameters);
+FCFunction FCFunctionNew(FCFunction parent, int *args, int *local_vars, fc_tree_or_param local_trees);
+fc_value FCFunctionInvoke(FCFunction funct, fc_value parameters[]);
 
 #endif
+

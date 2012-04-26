@@ -34,6 +34,9 @@
 		ACC034591544AB2500C549B9 /* minuit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minuit.h; sourceTree = "<group>"; };
 		ACC0345C1544ABBD00C549B9 /* fc_core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fc_core.h; sourceTree = "<group>"; };
 		ACC0345D1544ABC200C549B9 /* fc_core.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fc_core.c; sourceTree = "<group>"; };
+		ACC0345F1546040300C549B9 /* fc_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fc_list.h; sourceTree = "<group>"; };
+		ACC034601546045100C549B9 /* fc_dict.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fc_dict.h; sourceTree = "<group>"; };
+		ACC034611546B68600C549B9 /* fun_c_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fun_c_internal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,9 @@
 				ACC034531544AB2500C549B9 /* deps.h */,
 				ACC0345C1544ABBD00C549B9 /* fc_core.h */,
 				ACC0345D1544ABC200C549B9 /* fc_core.c */,
+				ACC0345F1546040300C549B9 /* fc_list.h */,
+				ACC034601546045100C549B9 /* fc_dict.h */,
+				ACC034611546B68600C549B9 /* fun_c_internal.h */,
 				ACC034541544AB2500C549B9 /* fun_c.h */,
 				ACC034561544AB2500C549B9 /* tests */,
 				ACC0343E1544A87A00C549B9 /* Products */,
