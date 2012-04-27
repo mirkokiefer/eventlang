@@ -17,7 +17,7 @@ void fc_value_new_list(FCList list, fc_value *buffer) {
   buffer->value.list = list;
 }
 
-void fc_value_new_function(FCFunction function, fc_value *buffer) {
+void fc_value_new_function(fc_function *function, fc_value *buffer) {
   buffer->type = fc_type_function;
   buffer->value.function = function;
 }
