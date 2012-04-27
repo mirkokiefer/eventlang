@@ -57,6 +57,8 @@ static char* test_functions() {
   fc_funct_tree *root_expr_p[] = {&root_exprs[0], &root_exprs[1], &root_exprs[2]};
   fc_funct_new(0, root_expr_p, 3, &root);
   
+  fc_value result;
+  fc_funct_call(&root, NULL, 0, &result);
   //mu_assert("test http server", strcmp(test, "/test")==0);
   return 0;
 }
